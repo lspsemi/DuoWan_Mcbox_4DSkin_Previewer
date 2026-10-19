@@ -48,6 +48,11 @@ public final class DwDecryptor {
         void log(String message);
     }
 
+    /** Called between files on the worker thread; may block to pause, returns false to stop. */
+    public interface RunControl {
+        boolean awaitContinue(String currentName, int processed);
+    }
+
     public enum MapDbRepairMode {
         DELETE_MVILLAGES,
         DECRYPT_MVILLAGES
@@ -75,6 +80,9 @@ public final class DwDecryptor {
     private int zipEntryMissingKey;
     private final List<String> successfulResources = new ArrayList<>();
     private final List<String> failedResources = new ArrayList<>();
+    private RunControl runControl;
+    private int processedItems;
+    private boolean stopped;
 
     public DwDecryptor(Context context, Logger logger) {
         this(context, logger, false, false);
@@ -123,6 +131,22 @@ public final class DwDecryptor {
         this.chineseLogs = chineseLogs;
     }
 
+    public void setRunControl(RunControl runControl) {
+        this.runControl = runControl;
+    }
+
+    public boolean wasStopped() {
+        return stopped;
+    }
+
+    public int successfulCount() {
+        return successfulResources.size();
+    }
+
+    public int failedCount() {
+        return failedResources.size();
+    }
+
     public void decryptTree(Uri treeUri) throws IOException {
         long startedAt = SystemClock.elapsedRealtime();
         DocumentFile input = DocumentFile.fromTreeUri(context, treeUri);
@@ -143,6 +167,9 @@ public final class DwDecryptor {
         log("Analyze map log decryption: " + (analyzeMapWal ? "on" : "off"));
         log("Analyze user key: " + (analyzeUserKey ? "on" : "off"));
         decryptDirectory(input, output, null);
+        if (stopped) {
+            log("Stopped by user.");
+        }
         log("Done. filesDecryptedOrRepacked=" + decrypted + ", repaired=" + repaired
                 + ", copied=" + copied + ", skipped=" + skipped + ", fileFailed=" + failed
                 + ", zipEntriesDecrypted=" + zipEntryDecrypted
@@ -170,6 +197,9 @@ public final class DwDecryptor {
             String name = childNameByFile.get(child);
             if (name == null) {
                 continue;
+            }
+            if (!checkpoint(name)) {
+                return;
             }
             if (isAnalysisArtifactName(name.toLowerCase(Locale.US))) {
                 skipped++;
@@ -210,6 +240,14 @@ public final class DwDecryptor {
                 log("FAIL " + name + ": " + e.getMessage());
             }
         }
+    }
+
+    private boolean checkpoint(String name) {
+        if (!stopped && runControl != null && !runControl.awaitContinue(name, processedItems)) {
+            stopped = true;
+        }
+        processedItems++;
+        return !stopped;
     }
 
     private void processFile(DocumentFile file, DocumentFile inputDir, DocumentFile outputDir,
@@ -2148,6 +2186,9 @@ public final class DwDecryptor {
         }
         if (message.startsWith("zip timing ")) {
             return "ZIP 耗时 " + message.substring("zip timing ".length());
+        }
+        if ("Stopped by user.".equals(message)) {
+            return "已按用户要求停止。";
         }
         if (message.startsWith("Done. ")) {
             return "完成。" + message.substring("Done. ".length())

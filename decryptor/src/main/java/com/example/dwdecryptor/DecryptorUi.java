@@ -34,7 +34,27 @@ final class DecryptorUi {
         return color(activity, com.google.android.material.R.attr.colorSurfaceContainerLow, 0xfff3f0f7);
     }
 
+    static int surfaceContainerHigh(Activity activity) {
+        return color(activity, com.google.android.material.R.attr.colorSurfaceContainerHigh, 0xffece6f0);
+    }
+
     static int onSurface(Activity activity) {
         return color(activity, com.google.android.material.R.attr.colorOnSurface, 0xff1c1b1f);
+    }
+
+    static int onSurfaceVariant(Activity activity) {
+        return color(activity, com.google.android.material.R.attr.colorOnSurfaceVariant, 0xff49454f);
+    }
+
+    static int primary(Activity activity) {
+        return color(activity, com.google.android.material.R.attr.colorPrimary, 0xff6750a4);
+    }
+
+    static int error(Activity activity) {
+        return color(activity, com.google.android.material.R.attr.colorError, 0xffb3261e);
+    }
+
+    static int outlineVariant(Activity activity) {
+        return color(activity, com.google.android.material.R.attr.colorOutlineVariant, 0xffcac4d0);
     }
 }

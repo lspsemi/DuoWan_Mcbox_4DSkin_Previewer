@@ -2,7 +2,7 @@ plugins { id 'com.android.application' }
 android {
     namespace 'com.example.dwdecryptor'
     compileSdk 35
-    defaultConfig { applicationId 'com.example.dwdecryptor'; minSdk 21; targetSdk 35; versionCode 9; versionName '3.6-performance' }
+    defaultConfig { applicationId 'com.example.dwdecryptor'; minSdk 21; targetSdk 35; versionCode 10; versionName '3.7-material-you-layout' }
 }
 dependencies {
     implementation 'androidx.documentfile:documentfile:1.0.1'
