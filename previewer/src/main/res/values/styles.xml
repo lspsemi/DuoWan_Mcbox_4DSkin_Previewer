@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+    <style name="PreviewTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/PreviewWindowAnimation</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+    <style name="PreviewWindowAnimation" parent="">
+        <item name="android:windowEnterAnimation">@anim/scale_in_activity</item>
+        <item name="android:windowExitAnimation">@anim/scale_out_activity</item>
+    </style>
+</resources>

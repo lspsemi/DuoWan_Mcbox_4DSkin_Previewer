@@ -1,0 +1,7 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.example.dwpreviewer'
+    compileSdk 35
+    defaultConfig { applicationId 'com.example.dwpreviewer'; minSdk 21; targetSdk 35; versionCode 4; versionName '3.1-isometric-export' }
+}
+dependencies { implementation 'com.google.android.material:material:1.12.0' }

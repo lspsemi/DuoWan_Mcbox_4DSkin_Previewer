@@ -1,0 +1,17 @@
+# Gradle / Android build output
+.gradle/
+**/build/
+local.properties
+.idea/
+*.iml
+
+# Local-only test data and device captures
+/encrypted-4d-samples/
+/device-render-export/
+/MAINTENANCE_MEMORY.md
+/*.png
+/sample-entries.txt
+
+# OS/editor files
+.DS_Store
+Thumbs.db
