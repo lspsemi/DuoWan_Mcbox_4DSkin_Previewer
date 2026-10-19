@@ -38,6 +38,7 @@
     <string name="previous_skin">‹</string>
     <string name="select_folder">Select Folder</string>
     <string name="select_skin">Select Skin</string>
+    <string name="search_skins">Search skin files</string>
     <string name="save_render">Save render</string>
     <string name="export_isometric">Isometric image (2048 × 2048)</string>
     <string name="export_six_faces">Six face renders</string>
@@ -49,6 +50,7 @@
     <string name="show_file_name">Show file name in preview</string>
     <string name="show_settings">Show Settings</string>
     <string name="skin_entry">[Skin] %1$s</string>
+    <string name="skin_folder_tab">Skin folder</string>
     <string name="status_encrypted">Encrypted</string>
     <string name="status_encrypted_4d">Encrypted 4D skin</string>
     <string name="status_encrypted_standard">Encrypted normal skin</string>
@@ -56,4 +58,12 @@
     <string name="status_plain">Plain</string>
     <string name="status_plain_4d">Plain 4D skin</string>
     <string name="status_plain_standard">Plain normal skin</string>
+    <string name="settings_tab">Settings</string>
+    <string name="section_display">Display</string>
+    <string name="section_language">Language</string>
+    <string name="language_chinese">Chinese interface</string>
+    <string name="empty_no_folder">Choose a folder that contains skins to start browsing.</string>
+    <string name="no_matching_entries">No matching skin files</string>
+    <string name="empty_folder">No skin files in this folder</string>
+    <string name="open_single_skin">Open skin</string>
 </resources>

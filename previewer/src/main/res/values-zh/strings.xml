@@ -38,6 +38,7 @@
     <string name="previous_skin">‹</string>
     <string name="select_folder">选择文件夹</string>
     <string name="select_skin">选择皮肤</string>
+    <string name="search_skins">搜索皮肤文件</string>
     <string name="save_render">保存渲染图</string>
     <string name="export_isometric">正等轴测图（2048 × 2048）</string>
     <string name="export_six_faces">六面渲染图</string>
@@ -49,6 +50,7 @@
     <string name="show_file_name">预览时显示文件名</string>
     <string name="show_settings">显示设置</string>
     <string name="skin_entry">[皮肤] %1$s</string>
+    <string name="skin_folder_tab">皮肤文件夹</string>
     <string name="status_encrypted">已加密</string>
     <string name="status_encrypted_4d">已加密的 4D 皮肤</string>
     <string name="status_encrypted_standard">已加密的普通皮肤</string>
@@ -56,4 +58,12 @@
     <string name="status_plain">未加密</string>
     <string name="status_plain_4d">未加密的 4D 皮肤</string>
     <string name="status_plain_standard">未加密的普通皮肤</string>
+    <string name="settings_tab">设置</string>
+    <string name="section_display">显示</string>
+    <string name="section_language">语言</string>
+    <string name="language_chinese">中文界面</string>
+    <string name="empty_no_folder">选择一个包含皮肤的文件夹开始浏览。</string>
+    <string name="no_matching_entries">没有匹配的皮肤文件</string>
+    <string name="empty_folder">此文件夹中没有皮肤文件</string>
+    <string name="open_single_skin">打开皮肤</string>
 </resources>
