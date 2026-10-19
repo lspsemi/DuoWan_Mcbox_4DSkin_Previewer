@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Artwork drawn on a 1200x1200 grid, scaled into the icon's safe zone. -->
+    <group android:scaleX="0.04936" android:scaleY="0.04936" android:translateX="24.382" android:translateY="24.999">
+        <path android:fillColor="#FF000000" android:pathData="M150,375a25,25 0 0,1 25,-25H350a25,25 0 0,1 25,25V575H575a25,25 0 0,1 25,25V800H800a25,25 0 0,1 25,25V1000a25,25 0 0,1 -25,25H175a25,25 0 0,1 -25,-25Z" />
+        <path android:fillColor="#FF000000" android:pathData="M850,150H1025a25,25 0 0,1 25,25V350a25,25 0 0,1 -25,25H850a25,25 0 0,1 -25,-25V175a25,25 0 0,1 25,-25Z" />
+        <group android:rotation="45" android:pivotX="587" android:pivotY="337">
+            <path android:fillColor="#FF000000" android:pathData="M504.5,232.5H669.5a22,22 0 0,1 22,22V419.5a22,22 0 0,1 -22,22H504.5a22,22 0 0,1 -22,-22V254.5a22,22 0 0,1 22,-22Z" />
+        </group>
+        <group android:rotation="-16.5" android:pivotX="912" android:pivotY="587">
+            <path android:fillColor="#FF000000" android:pathData="M831.5,484.5H992.5a22,22 0 0,1 22,22V667.5a22,22 0 0,1 -22,22H831.5a22,22 0 0,1 -22,-22V506.5a22,22 0 0,1 22,-22Z" />
+        </group>
+    </group>
+</vector>
